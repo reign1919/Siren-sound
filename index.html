@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DEV-REIGN</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #000000; /* black background */
+  }
+  h1 {
+    font-size: 3em;
+    font-weight: bold;
+    color: #00ff00; /* green text */
+    text-align: center;
+    text-shadow: 0 0 10px #00ff00;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 10px #00ff00;
+    }
+    to {
+      text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00, 0 0 50px #00ff00;
+    }
+  }
+</style>
+</head>
+<body>
+<h1 id="title">DEV-REIGN</h1>
+<audio id="siren" src="" loop></audio>
+<script>
+document.addEventListener("keydown", function(event) {
+  if (event.keyCode === 32) { // Spacebar keycode
+    var audio = document.getElementById("siren");
+    if (audio.paused) {
+      audio.src = "YOUR_AUDIO_FILE_PATH_HERE";
+      audio.play();
+    } else {
+      audio.pause();
+    }
+  }
+});
+</script>
+</body>
+</html>
