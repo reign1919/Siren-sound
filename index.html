@@ -41,8 +41,9 @@ document.addEventListener("keydown", function(event) {
     if (audio.paused) {
       audio.src = "mixkit-bell-ring-buzzer-2962.wav";
       audio.play();
-    } else {
-      audio.pause();
+      audio.addEventListener('ended', function() {
+        audio.pause();
+      }, { once: true });
     }
   }
 });
