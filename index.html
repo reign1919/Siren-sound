@@ -45,8 +45,15 @@ document.addEventListener("keydown", function(event) {
         audio.pause();
       }, { once: true });
     }
+  } else if (event.keyCode === 87) { // 'w' keycode
+    var audioW = new Audio("the-correct-answer-33-183620.mp3");
+    audioW.play();
+    audioW.addEventListener('ended', function() {
+      audioW.pause();
+    }, { once: true });
   }
 });
 </script>
 </body>
 </html>
+
